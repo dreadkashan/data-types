@@ -3,7 +3,9 @@
 
     </head>
     <body>
-        
+<button onclick="myfunction()">get time</button>       
+        <p id="hour"></p>
+        <p id="greet"></p>
         <script>
             var a = 8
             var b = 10 
@@ -14,6 +16,22 @@
            document.write('c and b are equal :'+ (c==b))
            document.write('d is nothing :' + (d)) 
            document.write('e is not defined:'+(e))
+           function myfunction(){
+           var greeting;
+           var time = new Date().getHours();
+            if(time < 10){
+                greeting = "goodmorning"
+            }
+          else if(time < 20){
+                greeting = "good day";
+            }
+            else {
+                greeting = "good evening";
+            }
+            document.getElementById('hour').innerHTML = "current hour is : " + time;
+         
+             document.getElementById('greet').innerHTML = "greeting : "+greeting;
+        }
         </script>
     </body>
 </html>
